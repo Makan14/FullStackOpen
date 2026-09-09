@@ -2,6 +2,10 @@ import { useState } from 'react'
 
 // je Refactorise l application afin que l'affichage des statistiques soit extrait dans son propre composant Statistics
 const Statistics = (props) =>{
+  // je Modifie l'application pour n'afficher les statistiques qu'une fois les commentaires recueillis.
+  if (!(props.good || props.neutral || props.bad)) {
+    return <p>No feedback given</p> 
+  }
 
   return(
     <div>
