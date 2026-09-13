@@ -28,28 +28,15 @@ const Statistics = (props) =>{
   }
 
   return(
-    <div>
-
-      {/* <p>good {props.good}</p>
-      <p>neutral {props.neutral}</p>
-      <p>bad {props.bad}</p>  */}
-
-      {/* j additionne le total de good neutral et bad */}
-      {/* <p>all {props.good + props.neutral +props. bad}</p>  */}
-
-      {/* calcul de la moyenne */}
-      {/* <p>average {" "} {}</p>  */}
-
-      {/* pourcentage du retour positif */}
-      {/* <p>positif {" "} {(props.good * 100) / (props.good + props.neutral + props.bad)} %</p>  */}
+    <tbody>
 
       <StatisticLine text="good" value={props.good}/> 
       <StatisticLine text="neutral" value={props.neutral}/> 
       <StatisticLine text="bad" value={props.bad}/> 
       <StatisticLine text="all" value={props.good + props.neutral +props. bad}/> 
       <StatisticLine text="average" value={(props.good - props.bad) / (props.good + props.neutral + props.bad)}/> 
-      <StatisticLine text="positif" value={(props.good * 100) / (props.good + props.neutral + props.bad) + " %"}/> 
-    </div>
+      <StatisticLine text="positive" value={(props.good * 100) / (props.good + props.neutral + props.bad) + " %"}/> 
+    </tbody>
   )
 };
 
@@ -70,7 +57,7 @@ const App = () => {
   }
 
   const badClick = () =>{
-    setBad(bad +1)
+    setBad(bad + 1)
   }
 
   return (
